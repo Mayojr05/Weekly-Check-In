@@ -1,0 +1,23 @@
+CLASS solution DEFINITION
+  PUBLIC
+  INHERITING FROM cl_demo_classrun
+  FINAL
+  CREATE PUBLIC.
+
+  PRIVATE SECTION.
+    METHODS test_find_cargo_flight.
+ENDCLASS.
+
+CLASS zcl_test IMPLEMENTATION.
+
+  METHOD main.
+    out->write( 'Hello from ADT console!' ).
+    test_find_cargo_flight( ).
+  ENDMETHOD.
+
+  METHOD test_find_cargo_flight.
+    " your SELECT goes here
+  ENDMETHOD.
+
+ENDCLASS.
+ 
