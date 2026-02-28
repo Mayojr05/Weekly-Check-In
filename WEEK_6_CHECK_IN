@@ -1,0 +1,36 @@
+CLASS zcl_data_conversion_demo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+CLASS zcl_data_conversion_demo IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA: lv_p_small TYPE p LENGTH 3 DECIMALS 2,
+          lv_p_large TYPE p LENGTH 6 DECIMALS 3,
+          lv_result  TYPE i,
+          lv_date1   TYPE d VALUE '20250101',
+          lv_date2   TYPE d VALUE '20250110',
+          lv_df16    TYPE decfloat16 VALUE '123.45',
+          lv_df34    TYPE decfloat34.
+
+    lv_p_large = CONV #( '5.25' ).
+    out->write( |Converted value: { lv_p_large }| ).
+
+    lv_p_small = EXACT #( 1 / 2 ).
+    out->write( |Exact result 1/2: { lv_p_small }| ).
+
+    lv_result = lv_date2 - lv_date1.
+    out->write( |Days difference: { lv_result }| ).
+
+    lv_df34 = lv_df16.
+    out->write( |DECFLOAT conversion: { lv_df34 }| ).
+
+  ENDMETHOD.
+
+ENDCLASS.
