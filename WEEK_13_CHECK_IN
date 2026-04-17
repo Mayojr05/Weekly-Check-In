@@ -1,0 +1,7 @@
+
+ @AbapCatalog: {
+    dataMaintenance: #RESTRICTED,
+    viewEnhancementCategory: [#PROJECTION_LIST],
+    extensibility.dataSources: [ 'Employee' ],
+    extensibility.elementSuffix: 'ZEM'
+}
